@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+   
+          
+      xmlns:p="http://primefaces.org/ui">
+      <h:head>
+        <title>Facelet Title</title>
+          <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <br/><br/>
+         <h1>HOJA TRABAJADOR</h1>
+         <br/><br/>
+       <h:form>
+            <p:growl id="growl" life="3000"/>
+             <div id="cuadro">
+            <h:panelGrid columns="2" id="hpgHojaTrabajador">
+                <p:outputLabel value ="Nombre: "/>
+                <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.nombre}"/>
+                 <p:outputLabel value ="Apellido: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.apellido}"/>
+                 <p:outputLabel value ="Telefono: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.telefono}"/>
+                 <p:outputLabel value ="Email: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.emil}"/>
+                 <p:outputLabel value ="Trabajo_Realizado: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.trabajoRealizado}"/>
+                 <p:outputLabel value ="Horas_traba: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.horasTraba}"/>
+                 <p:outputLabel value ="Fecha: "/>
+                 <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.fecha}"/>
+                  <p:outputLabel value ="Total: "/>
+                  <p:inputText required ="true" value = "#{hojaTrabajadorController.selected.total}"/>
+                
+                <p:commandButton action="#{hojaTrabajadorController.create}" value="Guardar" update="hpgHojaTrabajador"/>
+            </h:panelGrid>
+                 </div>
+        </h:form>
+    </h:body>
+</html>
+

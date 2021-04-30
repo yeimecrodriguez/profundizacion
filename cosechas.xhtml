@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+         <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <br/><br/>
+         <h1>COSECHAS</h1>
+         <br/><br/>
+        <h:form>
+            <p:growl id="growl" life="3000"/>
+            <div id="cuadro">
+            <h:panelGrid columns="2" id="hpgcosechas">
+                <p:outputLabel value ="Cultivo: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.cultivo}"/>
+                <p:outputLabel value ="Cantidad: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.cantidad}"/>
+                <p:outputLabel value ="Presentacion: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.presentacion}"/>
+                <p:outputLabel value ="Precio_Unidad: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.precioUnit}"/>
+                <p:outputLabel value ="Total: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.total}"/>
+                <p:outputLabel value ="Fecha: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.fecha}"/>
+                <p:outputLabel value ="Telefono: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.telefono}"/>
+                
+                <p:commandButton action="#{cosechasController.create}" value="Guardar" update="hpgcosechas"/>
+            </h:panelGrid>
+                </div>
+        </h:form>
+             <p:messages autoUpdate="true"/>
+                <p:outputLabel value ="Id: "/>
+                <p:inputText required ="true" value = "#{cosechasController.selected.id}"/>
+                <p:commandButton action="#{cosechasController.busquedaC}" value="Buscar"/>
+                </h:form>
+    </h:body>
+</html>
+

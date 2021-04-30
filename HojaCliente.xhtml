@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <br/><br/>
+         <h1>HOJA CLIENTE</h1>
+         <br/><br/>
+       <h:form>
+            <p:growl id="growl" life="3000"/>
+            <div id="cuadro">
+            <h:panelGrid columns="2" id="hpgHojaCliente">
+            <p:outputLabel value ="Nombre: "/>
+                <p:inputText required ="true" value = "#{hojaController.selected.nombre}"/>
+                 <p:outputLabel value ="Apellido: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.apellido}"/>
+                 <p:outputLabel value ="Telefono: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.telefono}"/>
+                 <p:outputLabel value ="Email: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.emil}"/>
+                 <p:outputLabel value ="Producto_Vendido: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.productoVendido}"/>
+                 <p:outputLabel value ="Cantidado: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.cantidad}"/>
+                 <p:outputLabel value ="Valor_Unit: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.valorUnit}"/>
+                 <p:outputLabel value ="Total: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.total}"/>
+                 <p:outputLabel value ="Fecha: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.fecha}"/>
+                 <p:outputLabel value ="Direccion: "/>
+                 <p:inputText required ="true" value = "#{hojaController.selected.direccion}"/>
+                
+                <p:commandButton action="#{hojaController.create}" value="Guardar" update="hpgHojaCliente"/>
+            </h:panelGrid>
+                </div>
+        </h:form>
+    </h:body>
+</html>
+

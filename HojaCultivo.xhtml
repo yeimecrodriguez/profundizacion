@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <br/><br/>
+         <h1>HOJA CULTIVO</h1>
+         <br/><br/>
+       <h:form>
+            <p:growl id="growl" life="3000"/>
+            <div id="cuadro">
+            <h:panelGrid columns="2" id="hpgHojaCultivo">
+                <p:outputLabel value ="Cultivo: "/>
+                <p:inputText required ="true" value = "#{hojaCultivoController.selected.cultivo}"/>
+                 <p:outputLabel value ="Fecha_Inicio: "/>
+                 <p:inputText required ="true" value = "#{hojaCultivoController.selected.fechaInicio}"/>
+                 <p:outputLabel value ="Cantidad: "/>
+                 <p:inputText required ="true" value = "#{hojaCultivoController.selected.cantidad}"/>
+                 <p:outputLabel value ="Cantidad_Terreno: "/>
+                 <p:inputText required ="true" value = "#{hojaCultivoController.selected.cantidadTerreno}"/>
+                 <p:outputLabel value ="Fecha_Final: "/>
+                 <p:inputText required ="true" value = "#{hojaCultivoController.selected.fechaFinal}"/>
+                
+                <p:commandButton action="#{hojaCultivoController.auditoria}" value="Guardar" update="hpgHojaCultivo"/>
+                 
+              
+                
+            </h:panelGrid>
+                </div>
+        </h:form>
+    </h:body>
+</html>
+
