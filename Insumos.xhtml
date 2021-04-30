@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <br/><br/>
+         <h1>INSUMOS</h1>
+         <br/><br/>
+        <h:form>
+            <p:growl id="growl" life="3000"/>
+            <div id="cuadro">
+            <h:panelGrid columns="2" id="hpgInsumos">
+                <p:outputLabel value ="Cultivo: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.cultivo}"/>
+                <p:outputLabel value ="Presentacion: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.presentacion}"/>
+                <p:outputLabel value ="Aplicacion : "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.aplicacion}"/>
+                <p:outputLabel value ="Nombre_Insumo: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.nombreInsumo}"/>
+                <p:outputLabel value ="Fecha: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.fecha}"/>
+                 <p:outputLabel value ="Nota: "/>
+                 <p:inputText required ="true" value = "#{insumosController.selected.nota}"/>
+                <p:outputLabel value ="Etapa: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.etapa}"/>
+                <p:outputLabel value ="Valor: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.valor}"/>
+             
+                <p:commandButton action="#{insumosController.create}" value="Guardar" update="hpgInsumos"/>
+             </h:panelGrid>
+                </div>
+        </h:form>
+         <h:form>
+             <p:messages autoUpdate="true"/>
+                <p:outputLabel value ="Id: "/>
+                <p:inputText required ="true" value = "#{insumosController.selected.id}"/>
+                <p:commandButton action="#{insumosController.busquedaI}" value="Buscar"/>
+                </h:form>
+    </h:body>
+</html>
+
+
